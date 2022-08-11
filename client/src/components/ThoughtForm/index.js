@@ -37,6 +37,7 @@ const ThoughtForm = () => {
     postData();
 
     // clear form value
+    window.location.reload(false);
     setFormState({ username: "", thought: "" });
     setCharacterCount(0);
   };
