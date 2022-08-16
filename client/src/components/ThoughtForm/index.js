@@ -54,7 +54,10 @@ const ThoughtForm = () => {
           method: "POST",
           body: data,
         });
-        if (!res.ok) throw new Error(res.statusText);
+        if (!res.ok) {
+          alert("Please choose another valid image");
+          throw new Error(res.statusText);
+        }
         const postResponse = await res.json();
         alert("Image has been successfully uploaded!");
         setFormState({ ...formState, image: postResponse.Location });
